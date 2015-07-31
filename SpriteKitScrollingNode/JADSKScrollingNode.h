@@ -11,13 +11,17 @@
 //@interface JADSKScrollingNode : SKCropNode <UIGestureRecognizerDelegate>
 @interface JADSKScrollingNode : SKNode <UIGestureRecognizerDelegate>
 
-
 @property (nonatomic) CGSize size;
+@property (nonatomic) CGPoint snapInPoint;
+@property (nonatomic) BOOL snapIn;
 
 -(id)initWithSize:(CGSize)size;
 -(void)scrollToTop;
 -(void)scrollToBottom;
--(void)enableScrollingOnView:(UIView*)view;
+-(void)enableHorizontalScrollingOnView:(UIView*)view;
+-(void)enableVerticalScrollingOnView:(UIView*)view;
 -(void)disableScrollingOnView:(UIView*)view;
+-(void)enableSnapInAtPoint:(CGPoint)point;
+-(void)disableSnapIn;
 
 @end

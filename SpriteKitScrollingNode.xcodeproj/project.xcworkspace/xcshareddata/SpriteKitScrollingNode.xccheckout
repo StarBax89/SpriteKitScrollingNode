@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BA9D119D-5C33-47DD-9C51-75EFECE5C482</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SpriteKitScrollingNode</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>060C463DB808F0FFA64471CD0279AC4B4530B4C0</key>
+		<string>https://github.com/StarBax89/SpriteKitScrollingNode.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpriteKitScrollingNode.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>060C463DB808F0FFA64471CD0279AC4B4530B4C0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/StarBax89/SpriteKitScrollingNode.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>060C463DB808F0FFA64471CD0279AC4B4530B4C0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>060C463DB808F0FFA64471CD0279AC4B4530B4C0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpriteKitScrollingNode</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -74,6 +74,10 @@ static const CGFloat kScrollingNodeHeight = 300;
         otherSceneNode.name = @"OtherSceneNode";
         otherSceneNode.position = (CGPoint){800,100};
         [self addChild:otherSceneNode];
+        
+        SKSpriteNode *snapinNode = [[SKSpriteNode alloc] initWithColor:[UIColor greenColor] size:CGSizeMake(10, 10)];
+        snapinNode.position = CGPointMake(_scrollingNode.size.width/2, _scrollingNode.size.height/2);
+        [self addChild:snapinNode];
     }
     return self;
 }
@@ -82,7 +86,8 @@ static const CGFloat kScrollingNodeHeight = 300;
 -(void)didMoveToView:(SKView *)view
 {
     
-    [_scrollingNode enableScrollingOnView:view];
+    [_scrollingNode enableVerticalScrollingOnView:view];
+    [_scrollingNode enableSnapInAtPoint:CGPointMake(_scrollingNode.size.width/2, _scrollingNode.size.height/2)];
     [_scrollingNode scrollToTop];
     
 }

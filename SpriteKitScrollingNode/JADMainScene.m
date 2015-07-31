@@ -30,20 +30,23 @@
         SKLabelNode *topLabelNode = [[SKLabelNode alloc] init];
         topLabelNode.text = @"Top";
         topLabelNode.position = CGPointMake(50, 2000-50);
+        topLabelNode.name=@"top";
         
         SKLabelNode *bottomLabelNode = [[SKLabelNode alloc] init];
         bottomLabelNode.text = @"Bottom";
         bottomLabelNode.position = CGPointMake(50, 50);
-        
+        bottomLabelNode.name=@"btm";
         SKSpriteNode *node1 = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(800, 450)];
         SKSpriteNode *node2 = [node1 copy];
         SKSpriteNode *node3 = [node1 copy];
         
         
-        node1.position = CGPointMake(512, 500);
+        node1.position = CGPointMake(_scrollingNode.size.width/2, _scrollingNode.size.height/2);
         node2.position = CGPointMake(512, 1000);
         node3.position = CGPointMake(512, 1500);
-        
+        node1.name = @"node1";
+        node2.name = @"node2";
+        node3.name = @"node3";
         [_scrollingNode addChild:topLabelNode];
         [_scrollingNode addChild:bottomLabelNode];
         [_scrollingNode addChild:node1];
@@ -58,6 +61,10 @@
         otherSceneNode.position = (CGPoint){800,100};
         [self addChild:otherSceneNode];
         
+        SKSpriteNode *snapinNode = [[SKSpriteNode alloc] initWithColor:[UIColor greenColor] size:CGSizeMake(10, 10)];
+        snapinNode.position = CGPointMake(_scrollingNode.size.width/2, _scrollingNode.size.height/2);
+        [self addChild:snapinNode];
+
     }
     return self;
 }
@@ -65,7 +72,8 @@
 -(void)didMoveToView:(SKView *)view
 {
     
-    [_scrollingNode enableScrollingOnView:view];
+    [_scrollingNode enableVerticalScrollingOnView:view];
+    [_scrollingNode enableSnapInAtPoint:CGPointMake(_scrollingNode.size.width/2, _scrollingNode.size.height/2)];
     [_scrollingNode scrollToTop];
     
 }

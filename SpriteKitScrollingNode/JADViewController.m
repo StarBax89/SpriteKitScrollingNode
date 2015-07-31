@@ -30,28 +30,45 @@
     SKView* view = [[SKView alloc] initWithFrame:viewFrame];
     self.view = view;
 }
+-(void)viewWillLayoutSubviews {
+    
+    //NSDictionary *gameData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GameData" ofType:@"plist"]];
+    // NSDictionary *worlds = [gameData objectForKey:@"Worlds"];
+    
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
+    skView.showsFPS = YES;
+    skView.showsNodeCount = YES;
+    
+    /* Sprite Kit applies additional optimizations to improve rendering performance */
+    skView.ignoresSiblingOrder = YES;
+    
+    if (!skView.scene) {
+        // Create and configure the scene.
+        //GameScene *scene = [GameScene sceneWithSize:skView.bounds.size];
+        //scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        CGSize contentSize = CGSizeMake(skView.bounds.size.width,skView.bounds.size.height);
+        
+        _mainScene = [JADMainScene sceneWithSize:contentSize];
+        _mainScene.viewController = self;
+        _mainScene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        _partScrollingScreen = [JADPartScrollingScene sceneWithSize:contentSize];
+        _partScrollingScreen.viewController = self;
+        _partScrollingScreen.scaleMode = SKSceneScaleModeAspectFill;
+        
+        [self presentFullScrollingScene];
 
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    SKView* skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
-    CGSize contentSize = CGSizeMake(skView.bounds.size.width,skView.bounds.size.height);
-    
-    _mainScene = [JADMainScene sceneWithSize:contentSize];
-    _mainScene.viewController = self;
-    _mainScene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    _partScrollingScreen = [JADPartScrollingScene sceneWithSize:contentSize];
-    _partScrollingScreen.viewController = self;
-    _partScrollingScreen.scaleMode = SKSceneScaleModeAspectFill;
-    
-    [self presentFullScrollingScene];
-    //[self presentCropDemoScene];
+        
+        //[self presentCropDemoScene];
 }
 
 
